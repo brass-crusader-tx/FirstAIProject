@@ -1,0 +1,14 @@
+name: TSUNAMI cross-repo runner probe
+on:
+  push:
+    branches:
+      - ci/tsunami-ui-genesis-crossrepo-20260927
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo CROSS_REPO_RUNNER=PASS
+          uname -a
