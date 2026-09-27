@@ -1,0 +1,8 @@
+name: PR Executor Probe
+on:
+  pull_request:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ACTIONS_EXECUTOR_PASS
