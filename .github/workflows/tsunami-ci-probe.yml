@@ -1,0 +1,12 @@
+name: TSUNAMI CI allocation probe
+on:
+  push:
+    branches: [tsunami-ui-ci-probe-20260927]
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "TSUNAMI_ALT_RUNNER=PASS"
+          uname -a
