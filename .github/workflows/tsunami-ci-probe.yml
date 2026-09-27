@@ -4,9 +4,15 @@ on:
     branches: [tsunami-ui-ci-probe-20260927]
   workflow_dispatch:
 jobs:
-  probe:
-    runs-on: ubuntu-latest
+  slim:
+    runs-on: ubuntu-slim
     steps:
-      - run: |
-          echo "TSUNAMI_ALT_RUNNER=PASS"
-          uname -a
+      - run: echo "TSUNAMI_ALT_RUNNER=PASS pool=ubuntu-slim"
+  arm:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - run: echo "TSUNAMI_ALT_RUNNER=PASS pool=ubuntu-24.04-arm"
+  x64:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "TSUNAMI_ALT_RUNNER=PASS pool=ubuntu-24.04"
